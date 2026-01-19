@@ -6,6 +6,7 @@ import EventsSection from '@/components/EventsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import WaveDivider from '@/components/WaveDivider';
+import CookieConsent from '@/components/CookieConsent';
 
 const Index = () => {
   return (
@@ -21,6 +22,7 @@ const Index = () => {
       <WaveDivider color="primary" />
       <ContactSection />
       <Footer />
+      <CookieConsent />
     </div>
   );
 };

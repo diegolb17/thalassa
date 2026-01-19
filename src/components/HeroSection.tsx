@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroImage from '@/assets/hero-food-industry.png';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from '@/components/ui/carousel';
+import { useEffect, useState } from 'react';
 
 const HeroSection = () => {
   const scrollToServices = () => {
@@ -9,18 +10,52 @@ const HeroSection = () => {
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+
+    const onSelect = () => {
+      setCurrent(api.selectedScrollSnap());
+    };
+    api.on('select', onSelect);
+    return () => {
+      api.off('select', onSelect);
+    };
+  }, [api]);
+
+  useEffect(() => {
+    if (!api) return;
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [api]);
+
   return (
     <section 
       id="hero" 
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background Image */}
+      {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Industria Alimentaria" 
-          className="w-full h-full object-cover"
-        />
+        <Carousel className="w-full h-full" opts={{ loop: true }} setApi={setApi}>
+          <CarouselContent className="h-full">
+            {['/LANDING1.png', '/LANDING2.png', '/LANDING3.png'].map((src, index) => (
+              <CarouselItem key={index} className="h-full">
+                <img
+                  src={src}
+                  alt={`Landing ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-20" />
+          <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-20" />
+        </Carousel>
+        <div className="absolute inset-0 bg-black/30 z-10" />
       </div>
 
       {/* Wave Symbol Animation */}
