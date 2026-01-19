@@ -54,7 +54,7 @@ const AboutSection = () => {
               <img 
                 src={susanaCeo} 
                 alt="Susana Serna - Founder & CEO of Thalassa Hub" 
-                className="w-full h-auto object-cover"
+                 className="w-full h-auto object-contain sm:object-cover max-h-[300px] sm:max-h-[500px] object-center"
               />
               {/* Decorative elements */}
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-champagne/30 rounded-full blur-2xl" />
