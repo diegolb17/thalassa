@@ -36,7 +36,7 @@ const HeroSection = () => {
   return (
     <section 
       id="hero" 
-       className="relative h-dvh flex items-center justify-center overflow-hidden"
+       className="relative h-screen w-full flex items-center justify-center overflow-hidden"
     >
       {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
@@ -47,7 +47,7 @@ const HeroSection = () => {
                 <img
                   src={src}
                   alt={`Landing ${index + 1}`}
-                   className="w-full h-full object-cover object-center block"
+                    className="w-full h-full object-contain md:object-cover object-center max-w-none"
                 />
               </CarouselItem>
             ))}
@@ -55,7 +55,7 @@ const HeroSection = () => {
           <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-20" />
           <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-20" />
         </Carousel>
-        <div className="absolute inset-0 bg-black/30 z-10" />
+         <div className="absolute inset-0 bg-black/40 z-10" />
       </div>
 
       {/* Wave Symbol Animation */}
@@ -79,7 +79,7 @@ const HeroSection = () => {
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center">
+       <div className="relative z-10 container mx-auto px-6 py-12 text-center flex flex-col items-center justify-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
