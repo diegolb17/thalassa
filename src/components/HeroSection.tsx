@@ -47,7 +47,7 @@ const HeroSection = () => {
                 <img
                   src={src}
                   alt={`Landing ${index + 1}`}
-                  className="w-full h-full object-contain md:object-cover object-center"
+                  className="w-full h-full object-cover object-center"
                 />
               </CarouselItem>
             ))}
