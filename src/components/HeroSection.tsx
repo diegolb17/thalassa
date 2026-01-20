@@ -36,7 +36,7 @@ const HeroSection = () => {
   return (
     <section 
       id="hero" 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+       className="relative min-h-[70vh] sm:min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
@@ -47,7 +47,7 @@ const HeroSection = () => {
                 <img
                   src={src}
                   alt={`Landing ${index + 1}`}
-                   className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-center"
                 />
               </CarouselItem>
             ))}
