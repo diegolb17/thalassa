@@ -36,18 +36,18 @@ const HeroSection = () => {
   return (
     <section 
       id="hero" 
-       className="relative min-h-[70vh] sm:min-h-screen flex items-center justify-center overflow-hidden"
+       className="relative h-dvh flex items-center justify-center overflow-hidden"
     >
       {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
         <Carousel className="w-full h-full" opts={{ loop: true }} setApi={setApi}>
           <CarouselContent className="h-full">
-            {['/LANDING1.png', '/LANDING2.png', '/LANDING3.png'].map((src, index) => (
+             {['/LANDING1.png', '/LANDING2.png'].map((src, index) => (
               <CarouselItem key={index} className="h-full">
                 <img
                   src={src}
                   alt={`Landing ${index + 1}`}
-                  className="w-full h-full object-cover object-center"
+                   className="w-full h-full object-cover object-center block"
                 />
               </CarouselItem>
             ))}
