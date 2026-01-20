@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import susanaCeo from '@/assets/susana-serna-ceo.png';
+
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -51,11 +51,11 @@ const AboutSection = () => {
             className="relative"
           >
             <div className="relative rounded-2xl overflow-hidden shadow-card">
-              <img 
-                src={susanaCeo} 
-                alt="Susana Serna - Founder & CEO of Thalassa Hub" 
-                 className="w-full h-auto object-contain sm:object-cover max-h-[300px] sm:max-h-[500px] object-center"
-              />
+               <img 
+                 src="/susana.png" 
+                 alt="Susana Serna - Founder & CEO of Thalassa Hub" 
+                  className="w-full h-auto object-contain sm:object-cover max-h-[300px] sm:max-h-[500px] object-center"
+               />
               {/* Decorative elements */}
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-champagne/30 rounded-full blur-2xl" />
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-secondary/20 rounded-full blur-2xl" />
